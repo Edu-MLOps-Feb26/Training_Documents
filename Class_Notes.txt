@@ -1997,3 +1997,186 @@ Next ::
 		- Docker 
 		
 		- Kubernetes 
+
+
+
+		
+#########################
+Day - 5 | 14th Feb. 2026
+#########################	
+		
+		
+	- Package the ML Models :::
+	
+		- Containerization using Docker.
+		
+		- API Call / Web Application
+		
+	- Build and Deploy ML Models
+	
+	- Automate using github-actions 
+	
+	- ETL --> 
+	
+	
+	- Packing the ML Model ::::
+	
+		- Tools 
+		
+		- Projects 
+		
+		- Packaging methods 
+	
+	
+	- Docker ::::
+	
+	
+	ML Projects :::
+	
+		-> Basic Feedback form!
+			- Packaging 
+				- How to Package Docker
+	
+	
+		-> Actual Project 
+			- DVC,Streamlit,Fast-API,MLflow 
+	
+	
+		-> Actual Project 
+			- Sagemaker-ai
+		
+	
+	Containerization ::::
+	
+		-> It is a process to package the application along with its' dependencies.
+		
+		
+		Tool :
+		
+		Docker is one of the Containerization Tools
+		
+
+			
+			
+		What is Virtual Machine ?
+			- VMs are called as Hardware level Virtualization 
+			- VMs are created using  Hypervisor 
+			- VMs are used to execute Operating System 
+			- VMs will continue to execute, even if there is no active Task/Application.
+			- VMs consume more time and space to start the Task/Application	
+		
+		What is Container ?
+			- Container are called as OS level Virtualization 
+			- Container are created using  Container Engine 
+			- Container are used to execute Task/Application. Not Operating System 
+			- Container will immediately go to exit state, if there is no active Task/Application.
+			- Container consume less time and space to start the Task/Application	
+
+			- Container uses tow important properties from base OS 
+			
+				- Kernel - Core of the OS.
+				
+					--> Control Group					
+					--> Namespace
+		
+		Setup Docker Engine on EC2 Instance :::
+		
+
+	Use-cases of Docker :::
+		
+		- Infra-Structure Perspective ::
+		
+			Build Enviroment (VM) -> Install all the required tools. 500 Enviroments
+			
+				Docker Containers are used to reduce the no. of VMs.			
+		
+			Build Enviroments:
+			
+				- Java Project (VM) 
+				- Python (VM)
+				- .Net (VM)
+				- Angular (VM)
+				- NodeJS (VM)
+				- Ruby (VM)				
+				
+			Virtual Machine (VM) - Build Server 
+				- Install Container Engine 
+					- C1 	- Java Project (VM) 
+					- C2    - Python (VM)
+					- C3    - .Net (VM)
+					- C4    - Angular (VM)
+					- C5    - NodeJS (VM)
+					- C6    - Ruby (VM)					
+					
+			- This refered as server templates. 
+			
+		
+		
+		- Developers/Deployment Perspective ::
+		
+			Java Project (VM)
+			
+			 - Create source code 					-> Source code mywebapp.java
+			 - build 								-> Create Artifacts - (mywebapp.war)
+			 - unit test
+							mywebapp.war
+							Tomcat Web Application Server -> jdk17,tomcat8.5
+					
+						Package the application along with its' dependencies.
+ 
+					Docker : Create a package/Image ==> mywebapp:v1.0(mywebapp.war,jdk17,tomcat8.5)
+					
+					Publish the Image to Container Registry -> DockerHub
+				
+			 - promote the change to test environment
+			 
+				
+				QA Envi: 	(mywebapp.war)
+					Pull the application image from dockerhub and create container out of it.
+				
+						mywebapp:v1.0
+						
+				
+				UAT Envi: 	(mywebapp.war)
+				
+
+				PROD Envi: 	(mywebapp.war)
+				
+		
+		Terminologies ::
+		
+			- Container Engine: 	- It is a Tool to Manage the Container Images and Containers
+									- Eg.: Docker Container Engine.
+									
+			- Image					- Is a static file,which defines the properties of the application to create container
+									- Non-Executable 
+									- Images are create using the Dockerfile Instructions based of incremental layers.
+			
+			- Container				- Executable units of Container image.
+			
+			- Container Registry	- Used to maintain/version control the container images
+									- DockerHub 
+									
+									
+						Eg.: github 	- To Version Control Source Codes 
+							 dockerhub 	- To Version Control container images
+							 
+			- Container Repository	- Sub-set of Container Registry
+									- Can be created based on App Teams/Enviroments 
+									
+	
+		Work with Docker :::
+		
+			- Launch EC2 Instance - Linux Ubuntu 22.04 version .
+			
+			- Login to EC2 Instance 
+			
+			- Install docker 
+			
+				- sudo -i 
+				- apt install docker.io			# https://docs.docker.com/engine/install/ubuntu/
+				
+			- Use Docker CLI Commands to interact with Docker Engine to create/Manage the containers/Images.
+			
+			
+			
